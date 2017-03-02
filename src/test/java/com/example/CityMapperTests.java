@@ -8,15 +8,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.example.domain.Dept;
-import com.example.mapper.DeptMapper;
+import com.example.domain.Bonus;
+import com.example.domain.City;
+import com.example.mapper.CityMapper;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class DeptMapperTests {
+public class CityMapperTests {
 	
 	@Autowired
-	DeptMapper mapper;
+	CityMapper mapper;
 
 	@Test
 	public void test01_confirmMapper(){
@@ -25,20 +26,13 @@ public class DeptMapperTests {
 	
 	@Test
 	public void test01_selectAll(){
-		List<Dept> list = mapper.selectAll();
+		List<City> list = mapper.selectAll();
 		
-		for(Dept dept : list)
-			System.out.println(dept);	
-	}
-	
-	@Test
-	public void test01_selectAllWithEmp(){
-		List<Dept> list = mapper.selectAllWithEmp();
+		for(City city : list)
+			System.out.println(city);
 		
-		for(Dept dept : list)
-			System.out.println(dept);	
+		
 	}
-	
 	@Test
 	public void test02_selectByDeptno(){
 		

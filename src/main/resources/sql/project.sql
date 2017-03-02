@@ -79,3 +79,21 @@ create table country_language (
 	constraint ck_is_official check (is_official in ('T','F')),
 	constraint pk_country_language primary key (country_code, language)
 );
+
+select * 
+	from dept d join emp e 
+		on d.deptno = e.deptno;
+		
+select d.DEPTNO 	as dept_deptno, 
+	   d.DNAME 		as dept_dname,
+	   d.LOC 		as dept_loc,
+	   e.EMPNO		as emp_empno,
+	   e.ENAME 		as emp_ename,
+	   e.JOB		as emp_job,
+	   e.MGR		as emp_mgr,
+	   e.HIREDATE  	as emp_hiredate,
+	   e.SAL		as emp_sal,
+	   e.COMM		as emp_comm,
+	   e.DEPTNO		as emp_deptno
+	from dept d left outer join emp e
+		on d.DEPTNO = e.DEPTNO; 

@@ -1,5 +1,8 @@
 package com.example.domain;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 public class CountryLanguage {
 
 	private String countryCode;
@@ -10,7 +13,20 @@ public class CountryLanguage {
 	public CountryLanguage() {
 		// TODO Auto-generated constructor stub
 	}
-
+	@Override
+	public String toString(){
+		ObjectMapper objectMapper = new ObjectMapper();
+		
+		String json = null;
+		
+		try {
+			json = objectMapper.writeValueAsString(this);
+		} catch (JsonProcessingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return json;	
+	}
 	/**
 	 * @return the countryCode
 	 */

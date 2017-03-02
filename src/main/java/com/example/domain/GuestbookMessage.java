@@ -1,16 +1,32 @@
 package com.example.domain;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 public class GuestbookMessage {
 
 	private double messageId;
-	private String guestId;
+	private String guestName;
 	private String password;
 	private String message;
 
 	public GuestbookMessage() {
 		// TODO Auto-generated constructor stub
 	}
-
+	@Override
+	public String toString(){
+		ObjectMapper objectMapper = new ObjectMapper();
+		
+		String json = null;
+		
+		try {
+			json = objectMapper.writeValueAsString(this);
+		} catch (JsonProcessingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return json;	
+	}
 	/**
 	 * @return the messageId
 	 */
@@ -29,15 +45,15 @@ public class GuestbookMessage {
 	/**
 	 * @return the guestId
 	 */
-	public String getGuestId() {
-		return guestId;
+	public String getGuestName() {
+		return guestName;
 	}
 
 	/**
 	 * @param value the guestId to set
 	 */
-	public GuestbookMessage setGuestId(final String value) {
-		guestId = value;
+	public GuestbookMessage setGuestName(final String value) {
+		guestName = value;
 		return this;
 	}
 

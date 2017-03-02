@@ -8,15 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.example.domain.Dept;
-import com.example.mapper.DeptMapper;
+import com.example.domain.GuestbookMessage;
+import com.example.mapper.GuestbookMessageMapper;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class DeptMapperTests {
+public class GuestbookMessageMapperTests {
 	
 	@Autowired
-	DeptMapper mapper;
+	GuestbookMessageMapper mapper;
 
 	@Test
 	public void test01_confirmMapper(){
@@ -25,20 +25,13 @@ public class DeptMapperTests {
 	
 	@Test
 	public void test01_selectAll(){
-		List<Dept> list = mapper.selectAll();
+		List<GuestbookMessage> list = mapper.selectAll();
 		
-		for(Dept dept : list)
-			System.out.println(dept);	
-	}
-	
-	@Test
-	public void test01_selectAllWithEmp(){
-		List<Dept> list = mapper.selectAllWithEmp();
+		for(GuestbookMessage guestbookMessage : list)
+			System.out.println(guestbookMessage);
 		
-		for(Dept dept : list)
-			System.out.println(dept);	
+		
 	}
-	
 	@Test
 	public void test02_selectByDeptno(){
 		

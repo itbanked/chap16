@@ -2,6 +2,9 @@ package com.example.domain;
 
 import java.math.BigDecimal;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 public class City {
 
 	private int id;
@@ -13,7 +16,20 @@ public class City {
 	public City() {
 		// TODO Auto-generated constructor stub
 	}
-
+	@Override
+	public String toString(){
+		ObjectMapper objectMapper = new ObjectMapper();
+		
+		String json = null;
+		
+		try {
+			json = objectMapper.writeValueAsString(this);
+		} catch (JsonProcessingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return json;	
+	}
 	/**
 	 * @return the id
 	 */

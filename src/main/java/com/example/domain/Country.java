@@ -1,6 +1,10 @@
 package com.example.domain;
 
 import java.math.BigDecimal;
+import java.util.List;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Country {
 
@@ -19,11 +23,36 @@ public class Country {
 	private String headOfState;
 	private BigDecimal capital;
 	private String code2;
+	
+	//country : city ==> 1:n
+	private List<City> citys;
+
+	public List<City> getCitys() {
+		return citys;
+	}
+
+	public void setCitys(List<City> citys) {
+		this.citys = citys;
+	}
 
 	public Country() {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	public String toString(){
+		ObjectMapper objectMapper = new ObjectMapper();
+		
+		String json = null;
+		
+		try {
+			json = objectMapper.writeValueAsString(this);
+		} catch (JsonProcessingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return json;	
+	}
 	/**
 	 * @return the code
 	 */
