@@ -1,13 +1,13 @@
 package com.example.domain;
 
-public class GestbookMessage {
+public class GuestbookMessage {
 
 	private double messageId;
 	private String guestId;
 	private String password;
 	private String message;
 
-	public GestbookMessage() {
+	public GuestbookMessage() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -21,7 +21,7 @@ public class GestbookMessage {
 	/**
 	 * @param value the messageId to set
 	 */
-	public GestbookMessage setMessageId(final double value) {
+	public GuestbookMessage setMessageId(final double value) {
 		messageId = value;
 		return this;
 	}
@@ -36,7 +36,7 @@ public class GestbookMessage {
 	/**
 	 * @param value the guestId to set
 	 */
-	public GestbookMessage setGuestId(final String value) {
+	public GuestbookMessage setGuestId(final String value) {
 		guestId = value;
 		return this;
 	}
@@ -51,7 +51,7 @@ public class GestbookMessage {
 	/**
 	 * @param value the password to set
 	 */
-	public GestbookMessage setPassword(final String value) {
+	public GuestbookMessage setPassword(final String value) {
 		password = value;
 		return this;
 	}
@@ -66,7 +66,7 @@ public class GestbookMessage {
 	/**
 	 * @param value the message to set
 	 */
-	public GestbookMessage setMessage(final String value) {
+	public GuestbookMessage setMessage(final String value) {
 		message = value;
 		return this;
 	}
