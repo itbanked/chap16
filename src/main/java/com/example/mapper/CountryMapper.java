@@ -17,8 +17,12 @@ public interface CountryMapper {
 	@Select("select * from country")
 	List<Country> selectAll();
 	
+	//1:n 매핑 (Xml에서)
+	List<Country> selectAllWithCity();
+	
 	@Select("select * from country where code=#{code}")
 	Country selectByCode(String code);
+	
 	
 //	@Insert("insert into dept values (#{deptno},#{dname},#{loc})")
 //	int insert(Dept dept);
